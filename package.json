@@ -4,11 +4,12 @@
   "description": "",
   "homepage": "https://ranadeeps.github.io/new_react_app",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html --public-url '.'",
+    "predeploy": "rm -rf dist && parcel build index.html --public-url '.'",
+    "deploy": "gh-pages -d dist"
   },
+  
   "license": "MIT",
   "dependencies": {
     "react": "^16.13.1",
